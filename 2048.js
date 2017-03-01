@@ -1,4 +1,4 @@
-        var board = new Array();
+        var board = new Array(); //记录分数
         var score = 0;
         var has_conflicted = new Array();
         var successString = 'Success';
@@ -443,13 +443,13 @@
             return 20 + j * 120;
         }
         //监听移动设备
-        var startx =0;
-        var starty =0;
-        document.addEventListener('touchStart', function(event){
+        var startx = 0;
+        var starty = 0;
+        document.addEventListener('touchStart', function(event) {
             startx = event.touches[0].pageX;
             starty = event.touches[0].pageY;
         });
-        document.addEventListener('touchMove',function(){
+        document.addEventListener('touchMove', function() {
             event.preventDefault();
         })
         document.addEventListener('touchend', function(event) {
@@ -480,7 +480,7 @@
                         setTimeout('isGameOver()', 300);
                     }
                 }
-            } else {    //y
+            } else { //y
                 if (deltay > 0) {
                     //move down
                     if (moveDown()) {
